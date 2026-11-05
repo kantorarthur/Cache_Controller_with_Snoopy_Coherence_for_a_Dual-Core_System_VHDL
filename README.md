@@ -17,6 +17,11 @@ Each core has its own N-way set-associative, write-back cache. When a core misse
 | JSON parsing | **nlohmann/json 3.11.3** |
 | Build system | **CMake ≥ 3.20** (dependencies fetched with `FetchContent`) |
 
+
+## Demo -- Running the predefined VHDL simulation and visualising it in the C++ GUI
+
+https://github.com/user-attachments/assets/bffaf789-bc0e-498f-8fb3-650cb0ec1e53
+
 ## Context
 
 **Cache line:** caches copy memory in fixed-size blocks called lines (16 bytes here). Each line in the cache stores its data, a *tag* (which memory line it is), and a coherence *state*.
