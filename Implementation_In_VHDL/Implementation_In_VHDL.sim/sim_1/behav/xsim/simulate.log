@@ -1,0 +1,10 @@
+Time resolution is 1 ps
+Note: 1. hit and miss
+Time: 36 ns  Iteration: 0  Process: /tb_dual_core/stim  File: /home/pel/github/Cache_Controller_with_Snoopy_Coherence_for_a_Dual-Core_System_VHDL/Implementation_In_VHDL/sim/tb_dual_core.vhd
+Note: 2. replacement
+Time: 176 ns  Iteration: 0  Process: /tb_dual_core/stim  File: /home/pel/github/Cache_Controller_with_Snoopy_Coherence_for_a_Dual-Core_System_VHDL/Implementation_In_VHDL/sim/tb_dual_core.vhd
+Note: 3. write-back
+Time: 419 ns  Iteration: 0  Process: /tb_dual_core/stim  File: /home/pel/github/Cache_Controller_with_Snoopy_Coherence_for_a_Dual-Core_System_VHDL/Implementation_In_VHDL/sim/tb_dual_core.vhd
+Note: 4. both cores read the same line
+Time: 916 ns  Iteration: 0  Process: /tb_dual_core/stim  File: /home/pel/github/Cache_Controller_with_Snoopy_Coherence_for_a_Dual-Core_System_VHDL/Implementation_In_VHDL/sim/tb_dual_core.vhd
+INFO: xsimkernel Simulation Memory Usage: 357408 KB (Peak: 422944 KB), Simulation CPU Usage: 1150 ms

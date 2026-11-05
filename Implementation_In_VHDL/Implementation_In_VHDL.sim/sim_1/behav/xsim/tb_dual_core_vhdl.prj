@@ -1,0 +1,12 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../src/bus_arbiter.vhd" \
+"../../../../src/cache_pkg.vhd" \
+"../../../../src/repl_unit.vhd" \
+"../../../../src/cache_controller.vhd" \
+"../../../../src/main_memory.vhd" \
+"../../../../src/dual_core_system.vhd" \
+"../../../../sim/tb_dual_core.vhd" \
+
+# Do not sort compile order
+nosort

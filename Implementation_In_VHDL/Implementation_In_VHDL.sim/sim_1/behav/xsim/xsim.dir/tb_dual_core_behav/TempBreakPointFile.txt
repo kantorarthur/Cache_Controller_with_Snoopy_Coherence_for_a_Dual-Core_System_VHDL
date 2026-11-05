@@ -1,0 +1,2 @@
+Breakpoint File Version 1.0
+143,true,"/home/pel/github/Cache_Controller_with_Snoopy_Coherence_for_a_Dual-Core_System_VHDL/Implementation_In_VHDL/src/dual_core_system.vhd"

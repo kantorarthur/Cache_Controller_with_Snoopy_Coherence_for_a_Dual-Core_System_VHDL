@@ -1,0 +1,13 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/pel/github/Cache_Controller_with_Snoopy_Coherence_for_a_Dual-Core_System_VHDL/Implementation_In_VHDL/src/bus_arbiter.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'bus_arbiter'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/pel/github/Cache_Controller_with_Snoopy_Coherence_for_a_Dual-Core_System_VHDL/Implementation_In_VHDL/src/cache_pkg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/pel/github/Cache_Controller_with_Snoopy_Coherence_for_a_Dual-Core_System_VHDL/Implementation_In_VHDL/src/repl_unit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'repl_unit'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/pel/github/Cache_Controller_with_Snoopy_Coherence_for_a_Dual-Core_System_VHDL/Implementation_In_VHDL/src/cache_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'cache_controller'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/pel/github/Cache_Controller_with_Snoopy_Coherence_for_a_Dual-Core_System_VHDL/Implementation_In_VHDL/src/main_memory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'main_memory'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/pel/github/Cache_Controller_with_Snoopy_Coherence_for_a_Dual-Core_System_VHDL/Implementation_In_VHDL/src/dual_core_system.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'dual_core_system'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/pel/github/Cache_Controller_with_Snoopy_Coherence_for_a_Dual-Core_System_VHDL/Implementation_In_VHDL/sim/tb_dual_core.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_dual_core'
