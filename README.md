@@ -1,3 +1,5 @@
+<img width="1440" height="920" alt="Image" src="https://github.com/user-attachments/assets/f28b6691-a51d-4b34-b58c-90b4b171d469" />
+
 # Cache Controller with Snoopy Coherence for a Dual-Core System
 
 A VHDL model of two private caches kept coherent by the **MSI snoopy protocol** over a shared bus, verified by a self-checking testbench, plus a C++ desktop viewer that replays the simulation step by step.
