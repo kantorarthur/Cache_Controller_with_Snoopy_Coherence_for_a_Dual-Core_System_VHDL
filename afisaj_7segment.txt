@@ -1,0 +1,37 @@
+Leduri:
+
+LED(0, 1, 2) - Numar scenariu curent (in binar)
+Led(3) - 1 daca ultimul acces a fost HIT
+Led(4) - 1 daca ultimul acces a fost MISS
+Led(5 - 10) - Operatia curenta din scenariu curent (ex: Cand suntem in scenariu 2, stare 2 (in zecimal) inseamna: core 0 citeste 0x40(miss) (pot sa ma uit in c++ gui)
+Led(11) - Nefolosit
+Led(12) - Se aprinde dupa fiecare operatie (inseamna ca operatia e gata si poti sa activezi urmatoarea operatie) (se stinge cand e gata simularea si se aprinde led 15)
+Led(13) - E aprins tot timpul (cat timp e modulul activ) 
+Led(14) - Daca ceva a esuat se aprinde
+Led(15) - Activ cand s-au facut toate verificarile si au trecut cu succes
+
+
+Switchuri:
+Switchurile (0 - 7) -- Aleg linia afisata (adica bitii 11-4 ai adresei)   ---- Ex: (   0000010 inseamna linia 0x020 ) 
+
+SW 14 sus - arata ultima valoarea citita din linie, nu mai arata starea (doar cei 16 biti de jos)
+SW 13 + 14 sus - arata ultima valoarea citita din linie (cei 16 biti de sus)
+
+Seven segment:
+
+1 - Numarul scenariului
+2 - Daca au trecut testele (p - toate testele au trecut, E - eroare, -   -- testul inca ruleaza)
+3 - Starea liniei alese pe switch (in cache 0) (adica M, S, I)
+4 - Starea liniei alese pe switch (in cache 1) (adica M, S, I)
+
+
+
+
+
+
+Testare:
+
+SW15 sus si apesi BTNB
+ BTNC (reset)
+
+

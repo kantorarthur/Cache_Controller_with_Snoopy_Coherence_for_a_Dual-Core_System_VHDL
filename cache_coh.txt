@@ -1,0 +1,59 @@
+-Proc FSM serveste cererile propriului core
+-Snoop FSM asculta bus-ul si reactioneaza cand se schimba ceva pe el
+-Cache Storage este copia efectiva a cache-ului
+-Repl Unit este replacement unitul, adica cel care face LRU/FIFO
+
+
+
+
+Bus stari:
+
+BusRd - Vreau sa citesc linie pe care nu o am, trebuie adusa
+(Daca celalat cache o are in M: imi trimite datele si trece in S)
+
+BusRdX - Vreau sa scriu o linie pe care nu o am
+(Daca celalat cache o are: O invalideaza (si mi-o trimite daca era in M))
+
+BusUpgr - Am linia in S si vreau sa o scriu (o sa devina M)
+(Daca celalat cache are linia o invalideaza)
+
+Flush - Scriu in memorie o linie modificata
+(Celalat cache ignora)
+
+Bus-ul este locatia pe care o citesc toate controllerele core-urilor ca sa se poata sincroniza
+(acolo se pun semnalele, etc... ca a fost modificata o linie eg)
+
+
+
+4 seturi - 2 way-uri:
+Practic e un hashmap care are cate 2 bucket-uri
+
+Indexul hashului(setului) se calculeaza: Bitii 5-4
+
+
+Bus Arbitrer: Lasa doar un singur core sa foloseasca bus-ul la un moment.
+
+Round Robin e un algoritm care decide cine primeste bus-ul cand mai multe core-uri il cer simultan
+(Il primeste cel care nu l a avut ultima data, sau cel care l-a avut cel mai tarziu ultima data)
+Round Robin tine un bit care zice cine l-a avut ultima data
+
+
+S - Linia e la fel in toate core-urile care o au
+M - Linia e modificata intr-un core. Cand alt core cere linia trebuie sa o dea (sau face flush)
+I - Linia pe care o detine nu mai e valida. Trebuie invalidata.
+
+O linie poate sa fie M doar intr-un singur cache
+
+
+**La scenariu 1:
+Dupa ce se aduce linia in cache-ul coreului
+la 145ns ar trebuie sa fie "Completed", nu "miss"; si asa e la toate exemplele unde se aduce linia si dupa e "miss"**
+(Completed insemnand ca a finalizat cu succes de adus linia in core)
+
+Meaning biti linii:
+Bitii (31 - 6) -- Adresa liniei
+Bitii (5-4) -- Indexul la care trebuie sa se afle linie in hash
+Bitii (3-2) -- Cate cuvinte se afla in linie
+Bitii (1-0) -- Pe cati bytes sunt cuvintele din linie
+
+
