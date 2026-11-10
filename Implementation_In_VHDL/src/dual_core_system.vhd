@@ -4,7 +4,8 @@ use work.cache_pkg.all;
 
 entity dual_core_system is
   generic (
-    POLICY : repl_policy_t := LRU
+    POLICY            : repl_policy_t := LRU;
+    MEM_INIT_ON_RESET : boolean := false
   );
   port (
     clk          : in  std_logic;
@@ -125,6 +126,9 @@ begin
     );
 
   mem : entity work.main_memory
+    generic map (
+      INIT_ON_RESET => MEM_INIT_ON_RESET
+    )
     port map (
       clk         => clk,
       rst         => rst,

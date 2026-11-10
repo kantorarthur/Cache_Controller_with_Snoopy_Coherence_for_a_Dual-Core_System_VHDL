@@ -4,6 +4,9 @@ use ieee.numeric_std.all;
 use work.cache_pkg.all;
 
 entity main_memory is
+  generic (
+    INIT_ON_RESET : boolean := false
+  );
   port (
     clk         : in  std_logic;
     rst         : in  std_logic;
@@ -21,15 +24,22 @@ architecture beh of main_memory is
   constant MEM_LINES : positive := 2**MEM_LINES_W;
 
   type mem_t    is array (0 to MEM_LINES-1) of line_data_t;
-  type mstate_t is (M_IDLE, M_BUSY, M_DONE);
+  type mstate_t is (M_INIT, M_IDLE, M_BUSY, M_DONE);
+
+  function init_line (li : natural) return line_data_t is
+    variable r : line_data_t;
+  begin
+    for wi in 0 to WORDS_PER_LINE-1 loop
+      r((wi+1)*WORD_W-1 downto wi*WORD_W) := std_logic_vector(to_unsigned(li*LINE_SIZE + 4*wi, WORD_W));
+    end loop;
+    return r;
+  end function;
 
   function init_mem return mem_t is
     variable r : mem_t;
   begin
     for li in 0 to MEM_LINES-1 loop
-      for wi in 0 to WORDS_PER_LINE-1 loop
-        r(li)((wi+1)*WORD_W-1 downto wi*WORD_W) := std_logic_vector(to_unsigned(li*LINE_SIZE + 4*wi, WORD_W));
-      end loop;
+      r(li) := init_line(li);
     end loop;
     return r;
   end function;
@@ -42,6 +52,7 @@ architecture beh of main_memory is
   signal mem     : mem_t := init_mem;
   signal st      : mstate_t := M_IDLE;
   signal cnt     : natural range 0 to MEM_LATENCY := 0;
+  signal init_ln : natural range 0 to MEM_LINES-1 := 0;
   signal rdata_r : line_data_t := (others => '0');
   signal done_r  : std_logic := '0';
 
@@ -55,10 +66,22 @@ begin
     if rising_edge(clk) then
       done_r <= '0';
       if rst = '1' then
-        st  <= M_IDLE;
-        cnt <= 0;
+        cnt     <= 0;
+        init_ln <= 0;
+        if INIT_ON_RESET then
+          st <= M_INIT;
+        else
+          st <= M_IDLE;
+        end if;
       else
         case st is
+          when M_INIT =>
+            mem(init_ln) <= init_line(init_ln);
+            if init_ln = MEM_LINES-1 then
+              st <= M_IDLE;
+            else
+              init_ln <= init_ln + 1;
+            end if;
           when M_IDLE =>
             if bus_cmd /= B_IDLE then
               cnt <= 1;

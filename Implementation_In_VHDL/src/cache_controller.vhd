@@ -137,13 +137,21 @@ begin
                   hit_r <= '1';
                 end if;
                 if req_we = '0' then
-                  rdata_r    <= cache(req_idx)(pw).data((w+1)*WORD_W-1 downto w*WORD_W);
+                  for k in 0 to WORDS_PER_LINE-1 loop
+                    if k = w then
+                      rdata_r <= cache(req_idx)(pw).data((k+1)*WORD_W-1 downto k*WORD_W);
+                    end if;
+                  end loop;
                   repl_way   <= pw;
                   repl_touch <= '1';
                   ready_r    <= '1';
                   pst        <= IDLE;
                 elsif cache(req_idx)(pw).state = M then
-                  cache(req_idx)(pw).data((w+1)*WORD_W-1 downto w*WORD_W) <= req_wdata;
+                  for k in 0 to WORDS_PER_LINE-1 loop
+                    if k = w then
+                      cache(req_idx)(pw).data((k+1)*WORD_W-1 downto k*WORD_W) <= req_wdata;
+                    end if;
+                  end loop;
                   repl_way   <= pw;
                   repl_touch <= '1';
                   ready_r    <= '1';
