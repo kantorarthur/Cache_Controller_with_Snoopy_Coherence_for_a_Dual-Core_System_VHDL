@@ -23,6 +23,36 @@ https://github.com/user-attachments/assets/cee56131-d352-4186-a9a2-8f51c08548ad
 | JSON parsing | **nlohmann/json 3.11.3** |
 | Build system | **CMake ≥ 3.20** (dependencies fetched with `FetchContent`) |
 
+## Documentation
+
+<p align="center">
+  <a href="docs/pdf/page-1.md">
+    <img src="docs/pdf/page-1.png" width="450" alt="Documentation - page 1">
+  </a>
+</p>
+
+<p align="center">
+  <a href="docs/pdf/page-1.md">Read the documentation</a> &nbsp;|&nbsp;
+  <a href="docs/pdf/page-2.md">Next page</a> &nbsp;|&nbsp;
+  <a href="docs/Final_Documentation.pdf">Download the full PDF</a>
+</p>
+
+<details>
+<summary><b>Jump to a chapter</b></summary>
+
+| Chapter | Page |
+|---|---|
+| 1. Introduction | [3](docs/pdf/page-3.md) |
+| 2. Bibliographic Study | [4](docs/pdf/page-4.md) |
+| 3. Analysis | [7](docs/pdf/page-7.md) |
+| 4. Design | [11](docs/pdf/page-11.md) |
+| 5. Implementation | [17](docs/pdf/page-17.md) |
+| 6. Tests and Experiments | [24](docs/pdf/page-24.md) |
+| 7. Conclusions | [32](docs/pdf/page-32.md) |
+| 8. FPGA Implementation | [33](docs/pdf/page-33.md) |
+| 9. Bibliography | [39](docs/pdf/page-39.md) |
+
+</details>
 
 ## Demo -- Running the predefined VHDL simulation and visualising it in the C++ GUI
 
