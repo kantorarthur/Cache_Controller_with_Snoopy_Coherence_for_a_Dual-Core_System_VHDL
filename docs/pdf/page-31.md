@@ -1,9 +1,9 @@
-# Pagina 31 / 40
+# Page 31 / 40
 
-<p align="center"><a href="page-30.md">⬅️ Înapoi</a> &nbsp;|&nbsp; <a href="../../README.md">🏠 README</a> &nbsp;|&nbsp; <a href="page-32.md">Înainte ➡️</a></p>
+<p align="center"><a href="page-30.md">Previous</a> &nbsp;|&nbsp; <a href="../../README.md">Home</a> &nbsp;|&nbsp; <a href="page-32.md">Next</a></p>
 
-<p align="center"><img src="page-31.png" width="800" alt="Pagina 31"></p>
+<p align="center"><img src="page-31.png" width="800" alt="Page 31"></p>
 
-<p align="center"><a href="page-30.md">⬅️ Înapoi</a> &nbsp;|&nbsp; <a href="../../README.md">🏠 README</a> &nbsp;|&nbsp; <a href="page-32.md">Înainte ➡️</a></p>
+<p align="center"><a href="page-30.md">Previous</a> &nbsp;|&nbsp; <a href="../../README.md">Home</a> &nbsp;|&nbsp; <a href="page-32.md">Next</a></p>
 
-<p align="center"><a href="../Final_Documentation.pdf">📥 Descarcă PDF-ul complet</a></p>
+<p align="center"><a href="../Final_Documentation.pdf">Download the full PDF</a></p>
