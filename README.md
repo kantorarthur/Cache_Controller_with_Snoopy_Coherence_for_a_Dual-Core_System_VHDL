@@ -6,6 +6,10 @@ A VHDL model of two private caches kept coherent by the **MSI snoopy protocol** 
 
 Each core has its own N-way set-associative, write-back cache. When a core misses, upgrades a line, or evicts a modified line, its cache controller puts a transaction on the shared bus. The other controller snoops every transaction and reacts: it supplies a modified line, demotes it, or invalidates its own copy.
 
+### Video - Running the 7 simulation scenarios on a Basys3 FPGA
+
+https://github.com/user-attachments/assets/cee56131-d352-4186-a9a2-8f51c08548ad
+
 ## Tech stack
 
 | Part | Technology |
