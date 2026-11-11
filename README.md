@@ -288,7 +288,6 @@ Each line of `cache_log.jsonl` is one JSON event:
 
 ## Design notes and limitations
 
-- The design targets **simulation**. The memory is a behavioral model and the design has not been synthesized.
 - The bus is **atomic** and each core has **one outstanding request** at a time.
 - The protocol is plain **MSI**. Reading and then writing an unshared line costs two bus transactions (`BusRd`, then `BusUpgr`); MESI's Exclusive state would remove the second one.
 - Cache-to-cache transfer also updates memory, so a line supplied by another cache always ends in S in both caches.
